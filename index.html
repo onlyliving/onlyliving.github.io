@@ -1,1497 +1,309 @@
-
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>front-end developer SoHee Kim</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700&amp;subset=latin" media="all"> -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Roboto">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
-
-    <style>
-
-        /* reset */
-        address,
-        em {
-            font-style: normal
-        }
-
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        p,
-        div,
-        ul,
-        ol,
-        li,
-        input {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            box-sizing: border-box
-        }
-
-
-        .contents-list li {
-            margin: 0 0 4px 16px
-        }
-
-        .contents-list li > li {
-            margin-left: 16px
-        }
-
-        .contents-list li > em {
-            display: block;
-            margin: 12px 0 4px 0
-        }
-
-        .side-btn {
-            position:relative;
-            margin-top: 8px;
-            height: 50px;
-            background: #000;
-            box-sizing: border-box;
-            border: 1px solid #e6e6e6;
-            border-radius: 3px;
-        }
-
-        .side-btn > a {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-        }
-        
-        .name-and-profession .text-muted {
-            color:#fff
-        }
-
-        @font-face {
-            font-family: 'icomoon';
-            src: url('fonts/icomoon.eot?9yug7q');
-            src: url('fonts/icomoon.eot?9yug7q#iefix') format('embedded-opentype'),
-            url('fonts/icomoon.ttf?9yug7q') format('truetype'),
-            url('fonts/icomoon.woff?9yug7q') format('woff'),
-            url('fonts/icomoon.svg?9yug7q#icomoon') format('svg');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        [class^="icon-"], [class*=" icon-"] {
-            /* use !important to prevent issues with browser extensions that change fonts */
-            font-family: 'icomoon' !important;
-            speak: none;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-
-            /* Better Font Rendering =========== */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .icon-instagram:before {
-            content: "\e905";
-        }
-
-        .icon-trophy:before {
-            content: "\e605";
-        }
-
-        .icon-office:before {
-            content: "\e606";
-        }
-
-        .icon-clock:before {
-            content: "\e60a";
-        }
-
-        .icon-reddit:before {
-            content: "\e609";
-        }
-
-        .icon-telegram:before {
-            content: "\e904";
-        }
-
-        .icon-flickr:before {
-            content: "\f16e";
-        }
-
-        .icon-medium:before {
-            content: "\f23a";
-        }
-
-        .icon-heart:before {
-            content: "\f004";
-        }
-
-        .icon-book:before {
-            content: "\f02d";
-            color:#fff
-        }
-
-        .icon-linkedin:before {
-            content: "\f08c";
-        }
-
-        .icon-twitter:before {
-            content: "\f099";
-        }
-
-        .icon-github:before {
-            content: "\f09b";
-            color:#fff
-        }
-
-        .icon-link:before {
-            content: "\f0c1";
-        }
-
-        .icon-bars:before {
-            content: "\f0c9";
-        }
-
-        .icon-pinterest:before {
-            content: "\f0d2";
-        }
-
-        .icon-googleplus:before {
-            content: "\f0d5";
-        }
-
-        .icon-circle:before {
-            content: "\f111";
-        }
-
-        .icon-code:before {
-            content: "\f121";
-        }
-
-        .icon-youtube:before {
-            content: "\f167";
-        }
-
-        .icon-stackoverflow:before {
-            content: "\f16c";
-        }
-
-        .icon-bitbucket:before {
-            content: "\f171";
-        }
-
-        .icon-tumblr:before {
-            content: "\f173";
-        }
-
-        .icon-dribbble:before {
-            content: "\f17d";
-        }
-
-        .icon-skype:before {
-            content: "\f17e";
-        }
-
-        .icon-foursquare:before {
-            content: "\f180";
-        }
-
-        .icon-gittip:before {
-            content: "\f184";
-        }
-
-        .icon-gratipay:before {
-            content: "\f184";
-        }
-
-        .icon-stackexchange:before {
-            content: "\f18d";
-        }
-
-        .icon-vimeo:before {
-            content: "\f194";
-        }
-
-        .icon-graduation-cap:before {
-            content: "\f19d";
-        }
-
-        .icon-language:before {
-            content: "\f1ab";
-        }
-
-        .icon-child:before {
-            content: "\f1ae";
-        }
-
-        .icon-behance:before {
-            content: "\f1b5";
-        }
-
-        .icon-spotify:before {
-            content: "\f1bc";
-        }
-
-        .icon-soundcloud:before {
-            content: "\f1be";
-        }
-
-        .icon-codepen:before {
-            content: "\f1cb";
-        }
-
-        .icon-hackernews:before {
-            content: "\f1d4";
-        }
-
-        .icon-lastfm:before {
-            content: "\f202";
-        }
-
-        .icon-angellist:before {
-            content: "\f209";
-        }
-
-        .icon-facebook:before {
-            content: "\f230";
-        }
-
-        .icon-meetup .path1:before {
-            content: "\e901";
-            color: rgb(255, 255, 255);
-        }
-
-        .icon-meetup .path2:before {
-            content: "\e902";
-            margin-left: -1.5em;
-            color: rgb(240, 1, 1);
-        }
-
-        .icon-meetup .path3:before {
-            content: "\e903";
-            margin-left: -1.5em;
-            color: rgb(3, 3, 3);
-        }
-
-        .icon-blogger:before {
-            content: "\e900";
-        }
-
-        .icon-exercism:before {
-            content: "\e601";
-        }
-
-        .icon-profile:before {
-            content: "\e600";
-        }
-
-        .icon-tools:before {
-            content: "\e034";
-        }
-
-        .icon-location:before {
-            content: "\e602";
-        }
-
-        .icon-mail:before {
-            content: "\e603";
-        }
-
-        .icon-phone:before {
-            content: "\e03f";
-        }
-
-        .icon-newspaper:before {
-            content: "\e607";
-        }
-
-        .icon-dots-three-horizontal:before {
-            content: "\e60b";
-        }
-
-        .icon-thumbs-up:before {
-            content: "\e604";
-        }
-
-        .icon-chevron-down:before {
-            content: "\e60c";
-        }
-
-        .icon-chevron-up:before {
-            content: "\e60d";
-        }
-
-        .icon-dots-three-horizontal:before {
-            content: "\e60b";
-        }
-
-        .icon-thumbs-up:before {
-            content: "\e604";
-        }
-
-        .icon-board:before {
-            content: "\e608";
-        }
-
-        .relative {
-            position: relative;
-        }
-
-        .clear-margin {
-            margin: 0;
-        }
-
-        .space-top {
-            margin-top: 10px;
-        }
-
-        .space-right {
-            margin-right: 10px;
-        }
-
-        .space-bottom {
-            margin-bottom: 10px;
-        }
-
-        .mr-5 {
-            margin-right: 5px;
-        }
-
-        .mr-10 {
-            margin-right: 10px;
-        }
-
-        .ml-5 {
-            margin-left: 5px;
-        }
-
-        .labels {
-            line-height: 2;
-        }
-
-        .label-keyword {
-            display: inline-block;
-            background: #7eb0db;
-            color: white;
-            font-size: 0.9em;
-            padding: 5px;
-            border: 1px solid #357ebd;
-            margin-right: 5px;
-        }
-
-        .label-keyword:last-child {
-            margin-right: 0;
-        }
-
-        .link-disguise {
-            color: inherit;
-        }
-
-        .link-disguise:hover {
-            color: inherit;
-        }
-
-        .clear-margin {
-            margin: 0;
-        }
-
-        @media (max-width: 992px) {
-            .clear-margin-sm {
-                margin-bottom: 0;
-            }
-        }
-
-        .fs-lg {
-            font-size: 1.33333333em;
-            line-height: .75em;
-            vertical-align: -15%;
-        }
-
-        .fs-2x {
-            font-size: 2em;
-        }
-
-        .fs-3x {
-            font-size: 3em;
-        }
-
-        .fs-4x {
-            font-size: 4em;
-        }
-
-        .btn-circle-sm {
-            width: 28px;
-            height: 28px;
-            line-height: 28px;
-            border-radius: 50%;
-            text-align: center;
-            padding: 0;
-            outline: none !important;
-        }
-
-        @font-face {
-            font-family: 'jst-elegant';
-            src: url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.eot?f218wo");
-            src: url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.eot?f218wo#iefix") format('embedded-opentype'), url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.ttf?f218wo") format('truetype'), url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.woff?f218wo") format('woff'), url("//unpkg.com/jsonresume-theme-elegant@1.10.1/assets/icomoon/fonts/icomoon.svg?f218wo#icomoon") format('svg');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        [class^="icon-"],
-        [class*=" icon-"] {
-            /* use !important to prevent issues with browser extensions that change fonts */
-            font-family: 'jst-elegant' !important;
-        }
-
-        body {
-            font-family: 'Roboto','Noto Sans KR', sans-serif;;
-            background: #f0f0f0;
-            color: #333;
-        }
-
-        .main {
-            padding: 5px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #e6e6e6;
-            border-radius: 3px;
-            min-height: 300px;
-            padding: 10px 0;
-        }
-
-        .card-nested {
-            min-height: 0;
-            border-width: 1px 0 0 0;
-        }
-
-        .card-nested:before,
-        .card-nested:after {
-            content: " ";
-            display: table;
-        }
-
-        .card-nested:after {
-            clear: both;
-        }
-
-        @media (max-width: 480px) {
-            .card-nested {
-                padding: 5px 0;
-            }
-        }
-
-        .background-card {
-            padding: 10px 20px;
-        }
-
-        .card-wrapper {
-            padding: 5px;
-        }
-
-        @media (max-width: 992px) {
-            .card-wrapper {
-                float: none !important;
-            }
-        }
-
-        .background-details .detail {
-            display: table;
-            margin-bottom: 24px
-        }
-
-        .background-details .detail .icon {
-            min-width: 45px;
-            max-width: 45px;
-            text-align: center;
-        }
-
-        .background-details .detail .info {
-            width: 100%;
-        }
-
-        .background-details .detail .title,
-        .background-details .detail .icon {
-            margin-bottom: 4px;
-            color: #707070;
-        }
-
-        .background-details .detail .mobile-title {
-            display: none;
-        }
-
-        @media (max-width: 480px) {
-            .background-details .detail .mobile-title {
-                display: inline-block;
-                margin-left: 5px;
-                font-weight: bold;
-                text-transform: uppercase;
-                vertical-align: middle;
-            }
-        }
-
-        .background-details .detail .icon,
-        .background-details .detail .info {
-            display: table-cell;
-            padding: 0 10px;
-        }
-
-        @media (max-width: 480px) {
-            .background-details .detail {
-                display: block;
-            }
-
-            .background-details .detail .icon {
-                max-width: inherit;
-                min-width: inherit;
-                text-align: left;
-            }
-
-            .background-details .detail .icon,
-            .background-details .detail .info {
-                display: block;
-                padding: 10px 0;
-            }
-
-            .background-details .detail .title {
-                display: none;
-            }
-        }
-
-        .info .content.has-sidebar {
-            width: 80%;
-            box-sizing: border-box;
-            float: left;
-            padding: 0 10px;
-            border-right: 1px solid #cdcdcd;
-        }
-
-        @media (max-width: 992px) {
-            .info .content.has-sidebar {
-                width: 100%;
-                border-right: 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .info .content.has-sidebar {
-                padding: 0 2px;
-            }
-        }
-
-        .info .sidebar {
-            margin-left: 80%;
-            box-sizing: border-box;
-            padding: 10px;
-        }
-
-        @media (max-width: 480px) {
-            ul {
-                padding-left: 25px;
-            }
-        }
-
-        .current-event {
-            font-size: 8px;
-            color: #5ACE24;
-            position: absolute;
-            right: 100%;
-            top: 4px;
-            left: -10px;
-        }
-
-        .mop-wrapper > p:last-child {
-            margin: 0;
-        }
-
-        /*
-            Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
-        */
-        .floating-nav-trigger {
-            width: 50px;
-            height: 50px;
-            -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-            -webkit-transition: background-color 0.5s ease;
-            -o-transition: background-color 0.5s ease;
-            transition: background-color 0.5s ease;
-            display: block;
-            border-radius: 50%;
-            text-align: center;
-            background-color: white;
-            font-size: 1.5em;
-            color: #357ebd;
-            z-index: 100;
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            text-decoration: none !important;
-        }
-
-        .floating-nav-trigger > [class^="icon-"],
-        .floating-nav-trigger [class*=" icon-"],
-        .floating-nav-trigger > .close-icon {
-            line-height: 50px;
-        }
-
-        .floating-nav-trigger .close-icon {
-            display: none;
-        }
-
-        .floating-nav-trigger:hover {
-            color: #1f496e;
-            background-color: #e6e6e6;
-        }
-
-        .floating-nav-trigger.is-open {
-            -webkit-box-shadow: none;
-            box-shadow: none;
-        }
-
-        .floating-nav-trigger.is-open .close-icon {
-            display: inherit;
-        }
-
-        .floating-nav-trigger.is-open .icon-bars {
-            display: none;
-        }
-
-        .floating-nav-trigger.is-open:hover {
-            background-color: white;
-        }
-
-        .floating-nav {
-            -webkit-transform: scale(0);
-            -ms-transform: scale(0);
-            -o-transform: scale(0);
-            transform: scale(0);
-            -webkit-transform-origin: 100% 100%;
-            -moz-transform-origin: 100% 100%;
-            -ms-transform-origin: 100% 100%;
-            transform-origin: 100% 100%;
-            -webkit-transition: transform 0.3s, visibility 0s 0.3s;
-            -o-transition: transform 0.3s, visibility 0s 0.3s;
-            transition: transform 0.3s, visibility 0s 0.3s;
-            -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-            position: fixed;
-            z-index: 50;
-            right: 10px;
-            bottom: 10px;
-            background-color: white;
-            width: 90%;
-            max-width: 400px;
-            visibility: hidden;
-            overflow: hidden;
-        }
-
-        .floating-nav ul {
-            font-size: 1.2em;
-            margin: 0;
-        }
-
-        .floating-nav ul li {
-            border-bottom: 1px solid #eff2f6;
-        }
-
-        .floating-nav ul li a {
-            padding: 20px;
-            text-decoration: none;
-            color: #357ebd;
-            display: block;
-        }
-
-        .floating-nav ul li a:hover {
-            color: #1f496e;
-        }
-
-        .floating-nav ul li:last-child {
-            border-bottom: 0;
-        }
-
-        .floating-nav.is-visible {
-            -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-            -o-transform: scale(1);
-            transform: scale(1);
-            -webkit-transition: transform 0.3s, visibility 0s 0s;
-            -o-transition: transform 0.3s, visibility 0s 0s;
-            transition: transform 0.3s, visibility 0s 0s;
-            visibility: visible;
-        }
-
-        @media (max-width: 992px) {
-            .profile-card-wrapper {
-                position: relative;
-            }
-        }
-
-        .profile-card-wrapper .profile-card {
-            padding: 10px;
-            background: #5cb85c;
-            color:#fff
-        }
-
-        .profile-pic {
-            padding: 20px 0;
-        }
-
-        @media (max-width: 992px) {
-            .profile-pic {
-                padding: 10px 0;
-            }
-        }
-
-        .profile-pic img {
-            width: 100px;
-            height: 100px;
-        }
-
-        @media (max-width: 992px) {
-            .name {
-                margin-top: 10px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .contact-details {
-                text-align: center;
-            }
-        }
-
-        .contact-details .detail {
-            display: table;
-            padding: 10px 0;
-        }
-
-        .contact-details .detail .icon {
-            padding: 0 10px;
-            color: #707070;
-        }
-
-        @media (max-width: 992px) {
-            .contact-details .detail .icon {
-                padding: 0 5px 0 0;
-            }
-        }
-
-        .contact-details .detail .info {
-            font-size: 0.8em;
-        }
-
-        .contact-details .detail .icon,
-        .contact-details .detail .info {
-            display: table-cell;
-            vertical-align: middle;
-            color:#fff
-        }
-        .contact-details .detail .info a {
-            font-size: 14px;
-            color:#fff;
-        }
-
-        @media (max-width: 768px) {
-            .contact-details .detail {
-                position: relative;
-                float: left;
-                width: 100%;
-                min-height: 1px;
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .contact-details .detail {
-                position: relative;
-                min-height: 1px;
-                padding-left: 15px;
-                padding-right: 15px;
-                padding: 10px;
-            }
-
-            .contact-details .detail .icon,
-            .contact-details .detail .info {
-                display: inline-block;
-            }
-        }
-
-        @media (max-width: 992px) and (min-width: 768px) {
-            .contact-details .detail {
-                float: left;
-                width: 25%;
-            }
-        }
-
-        .social-links {
-            line-height: 2.5;
-        }
-
-        .social-link {
-            margin-left: 5px;
-            min-width: 35px;
-            display: inline-block;
-        }
-
-        .social-link:first-child {
-            margin-left: 0;
-        }
-
-        .social-link:hover {
-            text-decoration: none;
-        }
-
-        .link-github {
-            color: #454545;
-        }
-
-        .link-github:hover,
-        .link-github:focus {
-            text-decoration: none;
-            color: #2b2b2b;
-        }
-
-        .link-twitter {
-            color: #33ccff;
-        }
-
-        .link-twitter:hover,
-        .link-twitter:focus {
-            text-decoration: none;
-            color: #00bfff;
-        }
-
-        .link-blog {
-            color: #f36f24;
-        }
-
-        .link-blog:hover,
-        .link-blog:focus {
-            text-decoration: none;
-            color: #d8560c;
-        }
-
-        .link-linkedin {
-            color: #007bb6;
-        }
-
-        .link-linkedin:hover,
-        .link-linkedin:focus {
-            text-decoration: none;
-            color: #005983;
-        }
-
-        .link-skype {
-            color: #12A5F4;
-        }
-
-        .link-skype:hover,
-        .link-skype:focus {
-            text-decoration: none;
-            color: #0986ca;
-        }
-
-        .link-instagram {
-            color: #fff;
-        }
-
-        .link-instagram:hover,
-        .link-instagram:focus {
-            text-decoration: none;
-            color: #d31e40;
-        }
-
-        .link-stackoverflow {
-            color: #f48024;
-        }
-
-        .link-stackoverflow:hover,
-        .link-stackoverflow:focus {
-            text-decoration: none;
-            color: #c3661c;
-        }
-
-        .link-stackexchange {
-            color: #62b0df;
-        }
-
-        .link-stackexchange:hover,
-        .link-stackexchange:focus {
-            text-decoration: none;
-            color: #389bd6;
-        }
-
-        .link-lastfm {
-            color: #d12127;
-        }
-
-        .link-lastfm:hover,
-        .link-lastfm:focus {
-            text-decoration: none;
-            color: #a51a1f;
-        }
-
-        .link-soundcloud {
-            color: #e8822d;
-        }
-
-        .link-soundcloud:hover,
-        .link-soundcloud:focus {
-            text-decoration: none;
-            color: #cc6916;
-        }
-
-        .link-googleplus {
-            color: #dd4b39;
-        }
-
-        .link-googleplus:hover,
-        .link-googleplus:focus {
-            text-decoration: none;
-            color: #c23321;
-        }
-
-        .link-youtube {
-            color: #dd4b39;
-        }
-
-        .link-youtube:hover,
-        .link-youtube:focus {
-            text-decoration: none;
-            color: #c23321;
-        }
-
-        .link-pinterest {
-            color: #bd091f;
-        }
-
-        .link-pinterest:hover,
-        .link-pinterest:focus {
-            text-decoration: none;
-            color: #8c0717;
-        }
-
-        .link-gratipay {
-            color: #630;
-        }
-
-        .link-gratipay:hover,
-        .link-gratipay:focus {
-            text-decoration: none;
-            color: #331a00;
-        }
-
-        .link-vimeo {
-            color: #17b3e8;
-        }
-
-        .link-vimeo:hover,
-        .link-vimeo:focus {
-            text-decoration: none;
-            color: #128fba;
-        }
-
-        .link-behance {
-            color: #2c98cf;
-        }
-
-        .link-behance:hover,
-        .link-behance:focus {
-            text-decoration: none;
-            color: #2379a5;
-        }
-
-        .link-codepen {
-            color: #1c1c1c;
-        }
-
-        .link-codepen:hover,
-        .link-codepen:focus {
-            text-decoration: none;
-            color: #020202;
-        }
-
-        .link-foursquare {
-            color: #fa4778;
-        }
-
-        .link-foursquare:hover,
-        .link-foursquare:focus {
-            text-decoration: none;
-            color: #f91554;
-        }
-
-        .link-reddit {
-            color: #545454;
-        }
-
-        .link-reddit:hover,
-        .link-reddit:focus {
-            text-decoration: none;
-            color: #3b3b3b;
-        }
-
-        .link-spotify {
-            color: #acd200;
-        }
-
-        .link-spotify:hover,
-        .link-spotify:focus {
-            text-decoration: none;
-            color: #829f00;
-        }
-
-        .link-tumblr {
-            color: #2d4661;
-        }
-
-        .link-tumblr:hover,
-        .link-tumblr:focus {
-            text-decoration: none;
-            color: #1d2d3e;
-        }
-
-        .link-dribbble {
-            color: #ce366f;
-        }
-
-        .link-dribbble:hover,
-        .link-dribbble:focus {
-            text-decoration: none;
-            color: #a82959;
-        }
-
-        .link-facebook {
-            color: #4b6daa;
-        }
-
-        .link-facebook:hover,
-        .link-facebook:focus {
-            text-decoration: none;
-            color: #3b5687;
-        }
-
-        .link-angellist {
-            color: black;
-        }
-
-        .link-angellist:hover,
-        .link-angellist:focus {
-            text-decoration: none;
-            color: #000000;
-        }
-
-        .link-bitbucket {
-            color: #205081;
-        }
-
-        .link-bitbucket:hover,
-        .link-bitbucket:focus {
-            text-decoration: none;
-            color: #163758;
-        }
-
-        .link-hackernews {
-            color: #ff6600;
-        }
-
-        .link-hackernews:hover,
-        .link-hackernews:focus {
-            text-decoration: none;
-            color: #cc5200;
-        }
-
-        .link-exercism {
-            color: #d81d4e;
-        }
-
-        .link-exercism:hover,
-        .link-exercism:focus {
-            text-decoration: none;
-            color: #ab173e;
-        }
-
-        .link-blogger {
-            color: #FF9234;
-        }
-
-        .link-blogger:hover,
-        .link-blogger:focus {
-            text-decoration: none;
-            color: #ff7701;
-        }
-
-        .link-medium {
-            color: #00AB6C;
-        }
-
-        .link-medium:hover,
-        .link-medium:focus {
-            text-decoration: none;
-            color: #00784c;
-        }
-
-        .link-flickr {
-            color: black;
-        }
-
-        .link-flickr:hover,
-        .link-flickr:focus {
-            text-decoration: none;
-            color: #000000;
-        }
-
-        .link-telegram {
-            color: #3BABDD;
-        }
-
-        .link-telegram:hover,
-        .link-telegram:focus {
-            text-decoration: none;
-            color: #2291c3;
-        }
-
-        .card-skills {
-            position: relative;
-        }
-
-        .skill-level {
-            border-radius: 3px;
-            position: absolute;
-            top: 10px;
-            bottom: 10px;
-            left: 0;
-            width: 10px;
-            box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
-        }
-
-        .skill-level .skill-progress {
-            position: absolute;
-            border-radius: 3px;
-            bottom: 0;
-            width: 100%;
-            -webkit-transition: height 1s ease;
-        }
-
-        .skill-level .skill-progress.beginner {
-            height: 50%;
-            background: #e74c3c;
-        }
-
-        .skill-level .skill-progress.intermediate {
-            height: 70%;
-            background: #f1c40f;
-        }
-
-        .skill-level .skill-progress.advanced {
-            height: 80%;
-            background: #428bca;
-        }
-
-        .skill-level .skill-progress.master {
-            height: 95%;
-            background: #5cb85c;
-        }
-
-        .skill-info {
-            margin-left: 15px;
-        }
-
-        @media (max-width: 480px) {
-            .skill-info {
-                margin-left: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .quote {
-                font-size: inherit;
-            }
-        }
-
-        .icon-meetup .path2:before {
-            margin-left: 0;
-        }
-
-        @media print {
-            a[href]:after {
-                content: none !important;
-            }
-
-            .profile-card {
-                text-align: center;
-            }
-
-            .profile-pic {
-                display: inline-block;
-                vertical-align: middle;
-            }
-
-            .profile-pic img {
-                border-radius: 0;
-            }
-
-            .name-and-profession {
-                display: inline-block;
-                vertical-align: middle;
-                margin-left: 15px;
-            }
-
-            .contact-details .detail {
-                position: relative;
-                float: left;
-                width: 25%;
-                min-height: 1px;
-                padding-left: 15px;
-                padding-right: 15px;
-                padding: 0;
-            }
-
-            .floating-nav,
-            .floating-nav-trigger {
-                display: none;
-            }
-
-            .pagebreak {
-                page-break-before: always;
-            }
-        }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="apple-mobile-web-app-title" content="WEB-FRONT-END-REAUME">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="sofieRemume">
+    <meta name="robots" content="ALL">
+    <meta name="keywords" content="web, resume, frontend, developer, 프론트엔드, 웹프론트엔드, 프론트엔드개발, 개발이력서, 프론트엔드개발이력서">
+    <meta name="description" content="디자인을 좋아하는 웹 프론트엔드 개발자 김소희입니다">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css?update=20200602">
+    <title>FE Developer Sofie</title>
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row main clearfix"><a class="js-floating-nav-trigger floating-nav-trigger" href="#"><i
-            class="icon-bars"></i><span class="close-icon">×</span></a>
-        <nav class="floating-nav js-floating-nav">
-            <ul class="list-unstyled">
-                <li><a href="#about"><i class="mr-10 icon-board"></i>About</a></li>
-                <li><a href="#work-experience"><i class="mr-10 icon-office"></i>Work Experience</a></li>
-                <li><a href="#skills"><i class="mr-10 icon-tools"></i>Skills</a></li>
-                <li><a href="#education"><i class="mr-10 icon-graduation-cap"></i>Education</a></li>
-                <!-- <li><a href="#awards"><i class="mr-10 icon-trophy"></i>Awards</a></li> -->
-                <!-- <li><a href="#volunteer-work"><i class="mr-10 icon-child"></i>Volunteer Work</a></li> -->
-                <!-- <li><a href="#publications"><i class="mr-10 icon-newspaper"></i>Publications</a></li> -->
-                <li><a href="#interests"><i class="mr-10 icon-heart"></i>Interests</a></li>
-                <!-- <li><a href="#references"><i class="mr-10 icon-thumbs-up"></i>References</a></li> -->
+    <header>
+        <h1 class="header-top-name">김소희<span class="header-top-name__sub">Web Front-end Developer</span></h1>
+    </header>
+    
+    <main>
+        <article class="content-box content-box--info">
+            <h2 class="hide-text">개인정보</h2>
+            <ul class="info-list">
+                <li class="info-list__email"><a href="mailto:greensohee88@naver.com" target="_blank" rel="noopener noreferrer">greensohee88@naver.com</a></li>
+                <li class="info-list__github"><a href="https://github.com/onlyliving/Side-Projects" target="_blank" rel="noopener noreferrer">https://github.com/onlyliving</a></li>
+                <li class="info-list__notion"><a href="https://www.notion.so/14ef995b935e471abc9b3ab5be30196e" target="_blank" rel="noopener noreferrer">개발 블로그</a></li>
+                <!-- <li class="info-list__insta"><a href="https://www.instagram.com/soheegreen" target="_blank" rel="noopener noreferrer">인스타그램</a></li> -->
+                <!-- <li class="info-list__tistory"><a href="http://green-webdesigner.tistory.com/" target="_blank" rel="noopener noreferrer">티스토리</a></li> -->
             </ul>
-        </nav>
-        <section class="col-md-3 card-wrapper profile-card-wrapper affix">
-            <div class="card profile-card"><span class="profile-pic-container"><div class="profile-pic"><img
-                    class="media-object img-circle center-block" data-src="holder.js/100x100" alt="Richard Hendriks"
-                    src="https://s.gravatar.com/avatar/9acdb04e603c1cac2b893190f6dd5911?s=100&amp;r=pg&amp;d=mm"
-                    itemprop="image"></div><div class="name-and-profession text-center"><h3 itemprop="name"><b>열정 소희</b></h3><h5
-                    class="text-muted" itemprop="jobTitle">Web Front-end Developer</h5></div></span>
-                <hr>
-                <div class="contact-details clearfix">
-                    <div class="detail"><span class="icon"><i class="icon fs-lg icon-mail"></i></span><span
-                            class="info"><a class="link-disguise" href="mailto:richard.hendriks@mail.com"
-                                            itemprop="email">greensohee88@naver.com</a></span></div>
-                    <div class="detail"><span class="icon"><i class="icon fs-lg icon-link"></i></span><span
-                            class="info"><a href="https://www.notion.so/14ef995b935e471abc9b3ab5be30196e" target="_blank">개발노트</a></span>
-                    </div>
-                </div>
-                <hr>
-                <div class="social-links text-center">
-                    <div>
-                        <a class="fs-2x social-link link-instagram icon-instagram" href="https://www.instagram.com/soheegreen"
-                           target="_blank" data-toggle="tooltip" title=""
-                           data-original-title="instagram">
+        </article>
 
-                        </a>
-                        <a class="fs-2x social-link link-github icon-github" href="https://github.com/onlyliving"
-                           target="_blank" data-toggle="tooltip" title=""
-                           data-original-title="github">
-                        </a>
-                        <a class="fs-2x social-link link-blog icon-book" href="http://green-webdesigner.tistory.com/"
-                           target="_blank" data-toggle="tooltip" title=""
-                           data-original-title="tistory">
-                        </a>
-                    </div>
-                </div>
+        <!-- 자기소개 -->
+        <article id="profileEl" class="content-box content-box--profile is-5-lines-only">
+            <h2 class="content-box__head"><span>Profile</span></h2>
+            <div class="content-box__profile-txt">
+                웹 프론트엔드 개발자 김소희입니다.
+                <br>저는 스타트업에서 웹 프론트 개발 및 유지보수를 하였습니다. 바닐라 자바스크립트를 썼고, 웹팩으로 최적화 하였습니다.
+                <br>전 회사에서 JS 라이브러리나 프레임워크를 다루지 않았던 것은 ‘나중에 필요하면 도입’하는 것으로 개발팀 내에서 협의된 사항이었습니다. 그 이유는 제가 자바스크립트를 더 잘 다뤘으면 하는 바람이었을 것입니다.
+                <br><br>스타트업에 들어오면서 기존에 다뤘던 제이쿼리는 모두 자바스크립트로 교체하였습니다. 그리고 처음에는 무조건 동작이 되게끔 하는 것이 목표였지만(그 만큼 못했기 때문에) 나중에는 실행되는 것을 넘어서 최적화하는 작업에 집중할 수 있게 되었습니다. 그렇게 개발 단계를 거치면서 잘 짜여진 코드의 중요성과 필요성을 몸소 깨닫게 되었습니다.
+                <br><br>그래서 저는 개발을 ‘잘’ 하는 개발자가 되고 싶습니다.
+                <br>지금은 구직활동을 하면서 <a id="sideProjectLinkText" href="#sideProjectHead" class="point-link">사이드 프로젝트</a>를 진행해보았고, 리엑트의 필요성을 알기 위해서 리엑트 공부를 하고 있습니다.
             </div>
-            <div class="side-btn"><a href="https://onlyliving.github.io/Side-Projects/dist/" target="_self">개인 프로젝트 (이미지검색 서비스)</a></div>
-        </section>
-        <section class="col-md-9 card-wrapper pull-right">
-            <div class="card background-card" style="min-height: 1027px;"><h4 class="text-uppercase">Background</h4>
-                <hr>
-                <div class="background-details">
-                    <div class="detail" id="about">
-                        <div class="icon"><i class="fs-lg icon-board"></i><span class="mobile-title">About</span></div>
-                        <div class="info"><h4 class="title text-uppercase">About</h4>
-                            <div class="card card-nested">
-                                <div class="content mop-wrapper" itemprop="description">
-                                    <p>
-                                        디자인을 좋아하는 웹프론트엔드 김소희입니다.<br><br>
-                                        환경조경학과를 졸업하고 5년간 조경설계를 하였습니다. 하는 일 자체는 너무 보람되었지만, 그 이상으로 계속 꾸준히 재미있게 오랫동안 가져갈 수 있는 일을 찾고 싶었습니다. 그러다가 생각한 것이 웹사이트였습니다. 저는 잘 구성된 웹페이지 보면 기분이 좋고 흥미로웠습니다. 결심을 하고 1년간 공부하여 웹퍼블리셔로 IT업계에 들어오게 되었습니다.<br><br>
-                                        웹의 범위가 점점 확장되는 것만큼 중요한 포지션임을 인지하고, 책임감 있게 임하려고 합니다.
-                                        기획과 디자인에 따라 웹페이지 만들어내는데 능숙합니다.
-                                        앞으로 꾸준히 성장하여 깨끗한 코드를 잘 작성하는 좋은 개발자가 되고 싶습니다.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail" id="work-experience">
-                        <div class="icon"><i class="fs-lg icon-office"></i><span
-                                class="mobile-title">Work Experience</span></div>
-                        <div class="info"><h4 class="title text-uppercase">Work Experience</h4>
-                            <ul class="list-unstyled clear-margin">
-                                <li class="card card-nested clearfix">
-                                    <div class="content">
-                                        <p class="clear-margin relative"><strong>개발팀-프론트엔드 개발</strong>,&nbsp;<a
-                                            href="https://trost.co.kr" target="_blank">(주)휴마트컴퍼니</a></p>
-                                        <p class="text-muted">
-                                            <small><span class="space-right">Jun, 2018 ~ Dec, 2019 </span></small>
-                                        </p>
+            <button type="button" id="profileMoreBtn" class="content-box__profile-more-btn">more</button>
+        </article>
 
-                                        <ul class="contents-list">
-                                            <li>
-                                                <em>PC 웹페이지 개발</em>
-                                                <ul>
-                                                    <li>기획에 따라 웹페이지 개선 및 구축. (html 마크업 및 퍼블리싱, RESTful API 연결 등 기능 구현)</li>
-                                                    <li>깃랩으로 이슈 관리 (기획, 마케팅 등과 협의시에는 트렐로로 관리)</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <em>앱 내의 웹페이지 개발</em>
-                                                <ul>
-                                                    <li>개발팀 협의하에 앱 내에 웹페이지 개발로 필요한 부분은 웹 포지션으로 개발. (개발 변경이 잦은 서비스 페이지 등.)</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <ul class="space-top labels">
-                                            <li class="label label-keyword">HTML5</li>
-                                            <li class="label label-keyword">CSS3</li>
-                                            <li class="label label-keyword">JavaScript</li>
-                                            <li class="label label-keyword">Webpack</li>
-                                            <li class="label label-keyword">Zeplin</li>
-                                            <li class="label label-keyword">GitLab</li>
-                                            <li class="label label-keyword">Trello</li>
-                                            <li class="label label-keyword">SourceTree</li>
-                                            <li class="label label-keyword">Postman</li>
-                                            <li class="label label-keyword">InteliJ</li>
-                                            <li class="label label-keyword">AMAP</li>
-                                        </ul>
-                                    </div>
-                                          
-                                </li>
-                                <li class="card card-nested clearfix">
-                                    <div class="content"><p class="clear-margin relative"><strong>개발팀-웹디자인 및 퍼블리싱</strong>,&nbsp;<a
-                                            href="https://www.roomnspace.co.kr" target="_blank">(주)룸앤스페이스</a></p>
-                                        <p class="text-muted">
-                                            <small><span class="space-right">Sept, 2016 ~ May, 2018 </span></small>
-                                        </p>
-                                        <div class="mop-wrapper space-bottom"><p>트로스트 서비스에서 웹 프론트엔드 영역을 담당하고 있습니다. 아직 갈 길이 먼 주니어 개발자입니다.</p>
-                                        </div>
-                                        <ul class="contents-list">
-                                            <li>
-                                                <em>서비스 내의 모든 디자인 작업 및 퍼블리싱 개발 업무</em>
-                                                <ul> 
-                                                    <li>
-                                                        웹사이트와 모바일웹 구축을 위한 디자인 및 퍼블리싱 작업.<br>
-                                                        웹 작업 비율(%) = 웹 디자인 작업 70% + 퍼블리싱 30%<br>
-                                                        웹 디자이너이자 퍼블리싱 작업을 병행 하였기에 디자인 작업을 비교적 많이 하였음.
-                                                    </li>
-                                                </ul> 
-                                                
-                                            </li>
-                                        </ul>
-                                        <ul class="space-top labels">
-                                            <li class="label label-keyword">HTML5</li>
-                                            <li class="label label-keyword">CSS3</li>
-                                            <li class="label label-keyword">jQuery</li>
-                                            <li class="label label-keyword">JavaScript</li>
-                                            <li class="label label-keyword">Adobe photoshop</li>
-                                            <li class="label label-keyword">Adobe Illustrator</li>
-                                            <li class="label label-keyword">Trello</li>
-                                        </ul>
-                                    </div>
-                                </li>
+        <!-- 기술 스택 -->
+        <article class="content-box content-box--skills">
+            <h2 class="content-box__head"><span>Technology Stack</span></h2>
+            <ul class="content-box__skill-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>Webpack</li>
+                <!-- <li>Zeplin</li> -->
+                <!-- <li>GitLab</li> -->
+                <!-- <li>Trello</li> -->
+                <!-- <li>SourceTree</li> -->
+                <!-- <li>Postman</li> -->
+                <!-- <li>Visual Studio Code</li> -->
+            </ul>
+        </article>
+
+        <!-- 업무 경험 -->
+        <article class="content-box content-box--experience">
+            <h2 class="content-box__head"><span>Work Experience</span></h2>
+            <ul class="experience-list">
+                <li>
+                    <div class="experience-list__name"><span>개발팀 - 프론트엔드 개발자</span><a class="point-link" href="https://trost.co.kr/" target="_blank" rel="noopener noreferrer">(주)휴마트컴퍼니</a></div>
+                    <ul>
+                        <li class="experience-list__date">2018.6.5 ~ 2019.12</li>
+                        <li class="experience-list__item-box experience-box">
+                            <!-- <span class="experience-box__head">기술 스택 및 협업 툴</span> -->
+                            <ul class="experience-box__item-list">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>JavaScript</li>
+                                <li>Webpack</li>
+                                <li>Zeplin</li>
+                                <li>GitLab</li>
+                                <li>Trello</li>
+                                <li>SourceTree</li>
+                                <li>Postman</li>
+                                <li>InteliJ</li>
+                                <li>Visual Studio Code</li>
                             </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="detail" id="education">
-                        <div class="icon"><i class="fs-lg icon-graduation-cap"></i><span
-                                class="mobile-title">Education</span></div>
-                        <div class="info"><h4 class="title text-uppercase">Education</h4>
-                            <div class="content">
-                                <ul class="list-unstyled clear-margin">
-                                    <li class="card card-nested">
-                                        <div class="content"><p class="clear-margin relative">웹 개발 관련 컨퍼런스, 외부 스터디, 퍼블리싱 관련 책 공부, javascript&j-Query 단과과정 수료, 웹퍼블리셔 취업과정 수료</p>
-                                            <p class="text-muted">
-                                                <small>Nov, 2015~</small>
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail" id="interests">
-                        <div class="icon"><i class="fs-lg icon-heart"></i><span class="mobile-title">Interests</span>
-                        </div>
-                        <div class="info"><h4 class="title text-uppercase">Interests</h4>
-                            <div class="content">
-                                <ul class="list-unstyled clear-margin">
-                                    <li class="card card-nested"><p>클라이밍, 새로운 경험, 디자인, 설계, 자연/공원</p>
-                                        <div class="space-top labels"><span
-                                                class="label label-keyword">climbing</span><span
-                                                class="label label-keyword">challenge</span><span
-                                                class="label label-keyword">design</span><span
-                                                class="label label-keyword">nature</span><span
-                                                class="label label-keyword">park</span></div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-<script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" type="text/javascript" async=""></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script>
-  $(function () {
-    var toggleFloatingMenu = function () {
-      $('.js-floating-nav').toggleClass('is-visible');
-      $('.js-floating-nav-trigger').toggleClass('is-open');
-    };
+                        </li>
+                        <li class="experience-list__txt experience-box">
+                            <span class="experience-box__head">PC 웹페이지 개발</span>
+                            <ul>
+                                <li>- 기획에 따라 웹페이지 개선 및 구축. (html 마크업 및 퍼블리싱, RESTful API 연결 등 기능 구현)</li>
+                                <li>- 깃랩으로 이슈 관리 (기획, 마케팅 등과 협의시에는 트렐로로 관리)</li>
+                            </ul>
+                        <li class="experience-list__txt experience-box">
+                            <span class="experience-box__head">앱 내의 웹페이지 개발</span>
+                            <ul>
+                                <li>- 개발팀 협의하에 앱 내에 웹페이지 개발로 필요한 부분은 웹 포지션으로 개발 (개발 변경이 잦은 서비스 페이지 등)</li>
+                            </ul>
+                        </li>
+                        
+                        <li class="experience-list__txt experience-box">
+                            <span class="experience-box__head">퇴사 사유</span>
+                            <ul>
+                                <li>- 회사 경영 악화로 권고사직</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="experience-list__name"><span>개발팀 - 웹퍼블리셔</span><a class="point-link" href="https://roomnspace.co.kr/" target="_blank" rel="noopener noreferrer">(주)룸앤스페이스</a></div>
+                    <ul>
+                        <li class="experience-list__date">2016.9 ~ 2018.5</li>
+                        <li class="experience-list__item-box experience-box">
+                            <!-- <span class="experience-box__head">기술 스택</span> -->
+                            <ul class="experience-box__item-list">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>jQuery</li>
+                                <li>Javascript</li>
+                                <li>Adobe photoshop</li>
+                                <li>Adobe Illustrator</li>
+                            </ul>
+                        </li>
+                        <li class="experience-list__txt experience-box">
+                            <span class="experience-box__head">웹사이트와 모바일웹 구축을 위한 디자인 및 퍼블리싱 작업</span>
+                            <ul>
+                                <li>- 웹 작업 비율(%) = 웹 디자인 작업 70% + 퍼블리싱 30%</li>
+                                <li>- 웹 디자이너이자 퍼블리싱 작업을 병행 하였기에 디자인 작업을 비교적 많이 함</li>
+                            </ul>
+                        </li>
+                        <li class="experience-list__txt experience-box">
+                            <span class="experience-box__head">퇴사 사유</span>
+                            <ul>
+                                <li>- 웹퍼블리싱 업무에 대한 욕심이 있어서 개발 스터디를 다니다가 프론트엔드 개발을 할 수 있는 기회가 생겨서 이직하기 위해 퇴사함</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="experience-list__name"><span>설계팀 - 디자이너</span><a class="point-link" href="http://www.ehwawon.kr/2016_ehwawon.pdf" target="_blank" rel="noopener noreferrer">조경설계 이화원</a></div>
+                    <ul>
+                        <li class="experience-list__date">2011.3 ~ 2015.10</li>
+                        <li class="experience-list__item-box experience-box">
+                            <!-- <span class="experience-box__head">사용 기술</span> -->
+                            <ul class="experience-box__item-list">
+                                <li>AutoCAD</li>
+                                <li>SketchUp</li>
+                                <li>Adobe photoshop</li>
+                                <li>Adobe Illustrator</li>
+                            </ul>
+                        </li>
+                        <li class="experience-list__txt experience-box">계획설계/기본설계/실시설계</li>
+                        <li class="experience-list__txt experience-box">
+                            <span class="experience-box__head">퇴사 사유</span>
+                            <ul>
+                                <li>- '내'가 더 잘할 수 있는 길을 찾기 위해서 퇴사를 결심함. 그리고 직장 상사가 내 미래라고 생각해 봤을 때 회의감이 듦 (끝이 없는 야근, 열정 페이)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
 
-    $('.background-card').css('min-height', window.screen.availHeight + 'px');
-    $('[data-toggle=tooltip]').tooltip();
-    $('.js-floating-nav-trigger').on('click', function (e) {
-      e.preventDefault();
-      toggleFloatingMenu();
-    });
-    $('.js-floating-nav a').on('click', toggleFloatingMenu);
+        <!-- 업무 외 활동 -->
+        <article class="content-box content-box--side-project">
+            <h2 id="sideProjectHead" class="content-box__head"><span>Side Project</span></h2>
+            <ul class="side-project-list">
+                <li>
+                    <h3 class="side-project-list__head">개인 사이드 프로젝트</h3>
+                    <ul>
+                        <li class="side-project-list__date">2020.03</li>
+                        <li class="side-project-list__txt">오픈 API를 이용한 배경이미지 검색 구현</li>
+                        <li class="side-project-list__link-box">
+                            <span class="hide-text">관련 링크</span>
+                            <ul class="link-list">
+                                <li><a href="https://github.com/onlyliving/Side-Projects" target="_blank" rel="noopener noreferrer">사이드프로젝트 오픈소스(github)</a></li>
+                                <li><a href="https://onlyliving.github.io/Side-Projects/dist/" target="_blank" rel="noopener noreferrer">사이드프로젝트 서비스 웹사이트</a></li>
+                            </ul>
+                        </li>
+                        <li>오픈 API를 이용한 단기 프로젝트로 의미 있는 서비스가 무엇이 있을까 고민하였습니다. 그러다가 제가 웹디자이너로 일할 때 배경이미지를 고르는 대에 시간을 많이 소비했던 기억이 떠올랐습니다.
+                            웹 디자이너와 마케팅 업무에 도움이 될 것으로 예상합니다.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3 class="side-project-list__head">프론트엔드 개발 노트</h3>
+                    <ul>
+                        <li class="side-project-list__date">2019.01 ~</li>
+                        <li>
+                            <span class="hide-text">관련 링크</span>
+                            <ul class="link-list">
+                                <li><a href="https://www.notion.so/14ef995b935e471abc9b3ab5be30196e" target="_blank" rel="noopener noreferrer">개발 노트(notion)</a></li>
+                            </ul>
+                        </li>
+                        <li>그동안 개발 작업을 하면서 필요한 내용을 정리해 둔 개발 노트입니다. 경험한 것을 기록하고, 알아야 되는 모든 것을 기록하려고 합니다. </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3 class="side-project-list__head">스터디 프로젝트<br>(도서관리 시스템 만들기)</h3>
+                    <ul>
+                        <li class="side-project-list__date">2018.06</li>
+                        <li>
+                            <span class="hide-text">관련 링크</span>
+                            <ul class="link-list">
+                                <li><a href="https://zpl.io/scene/a3oRmkY" target="_blank" rel="noopener noreferrer">도서관리 시스템 웹 디자인(zeplin)</a></li>
+                            </ul>
+                        </li>
+                        <li>스터디 프로젝트 (도서관리 시스템 만들기) : 개발 스터디에서 같이 프로젝트를 시작해서 어떠한 성과를 만들어보고 싶었습니다. 어떤 니즈가 있을까 얘기하다가 도서관리 시스템을 만들어보자는 의견이 나와서 시작하게 되었습니다. 제가 디자인을 할 줄 알아서 제가 디자인을 담당했고 모두의 의견을 받아서 디자인 진행을 하였습니다. 프론트 개발은 다른 개발자분과 같이 하기로 했습니다. 비록 개발 진행 중에 멈춰버렸지만, 의미 있는 작업이었습니다 </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3 class="side-project-list__head">가상선택자를 이용하여 간단한 UI 오픈소스 제공</h3>
+                    <ul>
+                        <li class="side-project-list__date">2018.01</li>
+                        <li>
+                            <span class="hide-text">관련 링크</span>
+                            <ul class="link-list">
+                                <!-- <li><a href="https://codepen.io/greensohee/pens/popular" target="_blank" rel="noopener noreferrer">링크</a></li> -->
+                                <li><a href="https://codepen.io/greensohee/pen/qpVVOb" target="_blank" rel="noopener noreferrer">CSS 가상요소로 버튼 만들기(codepen)</a></li>
+                                <li><a href="https://codepen.io/greensohee/pen/aEYvXo" target="_blank" rel="noopener noreferrer">CSS 가상요소로 글머리 모양 만들기(codepen)</a></li>
+                            </ul>
+                        </li>
+                        <li>개발 스터디 다니면서 여러 직군의 개발자와 소통하며 코드 리뷰를 했었습니다. 제가 코드 리뷰하는 중에 간단한 도형이나 화살표를 이미지를 쓰지 않고 가상선택자로 구현하는 것을 보고 관심 있어 하는 분들이 계셔서, 자주 쓰는 UI 관련 코드를 오픈소스로 제공하였습니다. </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
 
-    $('#remaining-profiles').on('show.bs.collapse', function () {
-      $('.js-profiles-collapse > i')
-        .removeClass('icon-chevron-down')
-        .addClass('icon-chevron-up');
-    });
-
-    $('#remaining-profiles').on('hidden.bs.collapse', function () {
-      $('.js-profiles-collapse > i')
-        .removeClass('icon-chevron-up')
-        .addClass('icon-chevron-down');
-    });
-  });
-</script>
+        <!-- 스스로 묻고 답하기 -->
+        <article class="content-box content-box-qna">
+            <h2 class="content-box__head"><span>Q&A</span></h2>
+            <dl class="table-box">
+                <dt class="table-box__q" value="q-1">업무상 강점은 무엇인가요?</dt>
+                <dd class="table-box__a" value="a-1">
+                    웹디자인 경험이 있어서 기획, 디자인팀과 업무 협의가 순조롭습니다. 필요시 간단한 디자인은 제가 하기도 합니다.
+                    <br>주변 관계가 원만합니다. 
+                    <br>일에 대한 책임감과 욕심이 있습니다.
+                    <br>일을 중요한 가치로 여깁니다.
+                </dd>
+                <dt class="table-box__q" value="q-2">희망연봉이 있나요?</dt>
+                <dd class="table-box__a" value="a-2">
+                    희망연봉은 3600만원 입니다.<br>
+                    연봉협상 가능합니다.
+                </dd>
+                <!-- <dt class="table-box__q">본인의 성공 스토리</dt>
+                <dd class="table-box__a">내용</dd> -->
+                <dt class="table-box__q" value="q-3">웹 개발에서 버그 이슈가 생겼을 경우 어떻게 대처하나요?</dt>
+                <dd class="table-box__a" value="a-3">
+                    제가 그 동안 개발팀에서 일하면서 진행했었던 대처방안입니다.<br>
+                    <br>1. 버그를 감지했을 떄, 무조건 개발팀에게 버그에 대한 문제 현상을 공유합니다.
+                    <br>2. 사용자가 불편함을 느낄 수 있는 크리티컬한 문제일 경우, CS팀에게도 내용을 공지해서 빠른 대응을 할 수 있도록 합니다.
+                    <br>3. 크리티컬한 이슈인 경우에는 일단 서비스가 정상적으로 진행될 수 있도록 조치를 취합니다.
+                    <br>4. 버그의 근본적인 원인을 찾아서, 바로 문제를 해결할 수 있는지 오래 걸리는 지 체크합니다.
+                    <br>5. 바로 수정이 가능한 부분은 최대한 빠르게 검토하여 테스트한 후에 배포하고 내용을 알립니다.
+                    <br>6. 오래 걸리는 이슈는 CS팀에게도 양해를 구하고 개발팀 내부에서 합심하여 문제를 해결하여 대처합니다.
+                    <br>7. 버그 이슈가 해결되면 깃랩 이슈 보드에 기록하고, 개발팀 내에서 회고하는 시간을 갖습니다. (문제가 왜 발생했고, 어떻게 대응했으며 앞으로 이 이슈가 발생하지 않으려면 어떻게 조치하는 것이 좋을지에 대해서 솔직하게 얘기합니다.)
+                    <br>8. 이후에 센트리(sentry)를 도입하여, 고객이 문의하기 전에 개발팀에서 먼저 감지하고 빠르게 대응할 수 있도록 조치하였습니다.
+                </dd>
+                <dt class="table-box__q" value="q-4">어떤 회사를 원하나요?</dt>
+                <dd class="table-box__a" value="a-4">
+                    제가 원하는 회사는 저의 가치 실현을 충분히 꾀할 수 있는 곳입니다.
+                    <br>제 삷에 있어서 '일'은 중요합니다. 일에 대한 욕심도 많고, 평생 일을 지속하고 싶기 때문에 제가 어떤 일을 하는지가 정말 중요합니다.
+                    <br>세상을 더 이롭게 하는 서비스인지, 그 회사는 무엇을 중요시 여기는지가 중요합니다.
+                    <br>건강한 문화를 가진 회사에서는 조직간에 싸울 일이 없습니다. 제 경험상 그렇습니다. 그저 본인의 일만 잘하면 될 뿐입니다.
+                    <br>그렇게 자유로운 대신에 일에 대한 성과에서는 엄격할 수 밖에 없습니다. 물론, 어떤 실수를 한다고 해서 바로 내치진 않을 것입니다. 분명하게 문제를 드러내고 어떻게 해결할지 같이 얘기하면서 해결하면 됩니다.
+                    <br>애사심이 있는 회사가 좋습니다.
+                </dd>
+                <dt class="table-box__q" value="q-5">일에 대한 가치는 어떤가요?</dt>
+                <dd class="table-box__a" value="a-5">
+                    일은 삶에서 많은 시간을 차지하는 큰 부분이고, 사회에서 가치를 실현시킬 수 있는 좋은 도구라고 생각합니다.
+                    <br>일에 몰입하는 것을 좋아하고, 일과 함께 제 자신도 같이 성장해나가고 싶습니다.
+                    <br>그래서 제가 좀 더 잘 할 수 있는, 재미있는, 좋은 서비스를 가진, 발전 가능성이 있는 일을 하고 싶습니다.
+                </dd>
+                <dt class="table-box__q" value="q-6">원하는 회사 위치는 어디인가요?</dt>
+                <dd class="table-box__a" value="a-6">1. 판교 2. 서울(강남)</dd>
+                <dt class="table-box__q" value="q-7">최종학력은 어떻게 되나요?</dt>
+                <dd class="table-box__a" value="a-7">청주대학교 환경조경학과(4년제)를 졸업했습니다.</dd>
+                <dt class="table-box__q" value="q-8">좋아하는 것, 취미활동은?</dt>
+                <dd class="table-box__a" value="a-8">
+                    자연과 운동을 좋아합니다.
+                    <br>좋아하는 것을 나열하면 초록, 자연, 공원, 클라이밍 등이 있습니다.
+                    <br>운동은 예전에 수영과 자전거타기를 했었는데 3년 전부터는 계속 클라이밍만 했습니다.
+                    <br>클라이밍도 나이가 들어서도 꾸준히 할 수 있는 운동이라서 매력적인 운동이라 생각되어 접하게 되었습니다.
+                    <br><a class="point-link" href="https://www.instagram.com/soheegreen" target="_blank" rel="noopener noreferrer">instagram</a>
+                </dd>
+                <dt class="table-box__q" value="q-9">조경설계에서 IT업종(웹 개발)으로 넘어오게 된 계기가 무엇인가요?</dt>
+                <dd class="table-box__a" value="a-9">
+                    조경설계도 보람되고 가치있는 직업이었습니다. 한 회사에서 사원에서 과장까지 달았습니다. 하지만 계속 이 일을 할 수 있을까라는 스스로 질문을 던졌을 때 자신이 없었습니다. 
+                    <br>이 일을 오래하고 나중에는 '내'가 설계를 잘 이끌어갈 수 있을까, 지금도 잦은 야근에 너무 힘든데 앞으로도 버틸 수 있을까 의문이 들었습니다.
+                    <br>제 위의 상사를 보더라도 크게 다르지 않았습니다. 아니 더욱 힘들어보였습니다.
+                    <br>그래서 좀 더 저에게 맞는 직업을 다시 찾고자 하였고, 디자인을 계속 다뤄왔으니 디자인과 관련된 일을 찾고 싶었습니다.
+                    <br>웹 사이트는 친숙하고 매일 이용합니다. 그래서 평소에도 웹사이트 디자인에 관심이 있었습니다. 웹사이트를 더욱 잘 디자인해보자라는 마음으로 시작하게 되었습니다.
+                </dd>
+                <dt class="table-box__q" value="q-10">퍼블리셔에서 프론트엔드 개발자가 된 계기는 무엇인가요?</dt>
+                <dd class="table-box__a" value="a-10">
+                    웹퍼블리셔로 웹을 다루기 시작하다가 디자인보다 프론트단 개발하는 것에 욕심이 생겼습니다. 웹 디자인, HTML 마크업, CSS 까지는 완전히 저의 담당이었고, JS 동적인 부분은 데이터 연결 전까지 할 수 있는 작업을 모두해서 넘기는 식이었습니다. 그러다가 자바스크립트 영역을 더 많이, 잘 다루고 싶어졌고, 개발 관련하여 여러 스터디를 다니다가 좋은 인연을 만나서 스타트업 개발팀에서 프론트엔드 개발자로 일을 하게 되었습니다
+                </dd>
+            </dl>
+        </article> 
+        
+    </main>
+    <footer>
+        <p>ⓒ sofie FE Resume</p>
+    </footer>
+    
 </body>
+<script src="index.js"></script>
 </html>
