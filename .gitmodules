@@ -4,3 +4,6 @@
 [submodule "Side-Projects"]
 	path = Side-Projects
 	url = https://github.com/onlyliving/Side-Projects
+[submodule "blog/hexo/themes/a-rsnippet"]
+	path = blog/hexo/themes/a-rsnippet
+	url = https://github.com/huyingjie/hexo-theme-A-RSnippet
