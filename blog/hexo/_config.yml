@@ -138,7 +138,7 @@ theme: a-rsnippet
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
     type: git
-    repo: https://github.com/onlyliving/onlyliving.github.io/blog/hexo
+    repo: https://github.com/onlyliving/onlyliving.github.io/tree/master/blog/hexo
     branch: master
 
 # ---------------------------------------------------------------
