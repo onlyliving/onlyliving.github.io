@@ -2,7 +2,7 @@
 
 웹 프론트앤드 개발자 (web front-end developer ) 김소희입니다.
 
--   [이력서](https://onlyliving.github.io/resume/)
+-   [이력서](https://onlyliving.github.io/resume/dist/)
 
 -   (Side Project) 카드형 컨텐츠 배경 이미지 검색 서비스
 
