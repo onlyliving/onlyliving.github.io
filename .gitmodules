@@ -7,6 +7,3 @@
 [submodule "blog/hexo/themes/a-rsnippet"]
 	path = blog/hexo/themes/a-rsnippet
 	url = https://github.com/huyingjie/hexo-theme-A-RSnippet
-[submodule "quiz-webapp"]
-	path = quiz-webapp
-	url = https://github.com/onlyliving/quiz-webapp
