@@ -20,19 +20,8 @@
 
 ## TODO
 
--   가설 설정 -> 검증
-
-### 1. 빠르게 배울 것 (일단 나열하기)
-
-```
-- node.js 제대로 써보기. (게시판, 회원가입, 로그인)
-- 타입스크립트를 기존 JS 코드에 적용해보기 -> 실제로 업무에 얼마나 도움이 되는지 검증!
-- github CI/CD 공부
-- 도메인.. https 세팅 (이건.. 개념부터.. kong or traefik)
-- fastapi
-```
-
-### 2. 효과적인 기록을 위해.. 어떤 플랫폼이 좋을까.
-
--   현재 : [notion](https://frontendsofie.notion.site/14ef995b935e471abc9b3ab5be30196e), macbook 기본 메모장
--   앞으로 추가적으로는 깃허브를 활용해보자. [Today I Learned](https://github.com/onlyliving/TIL)
+- 사이드 프로젝트 다시 시작하기
+    1. 기존 사이드 프로젝트 리펙토링 또는 다시 만들기
+    2. 기능 단순한 서비스 만들기
+        - 오픈 API 활용
+        - react native 강의에서 실습하는 프로젝트도 react로 다시 구현해보기
