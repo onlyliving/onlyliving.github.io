@@ -3,7 +3,7 @@
 웹 프론트엔드 개발자, 김소희입니다.
 `#web_developer` `#web_frontend_developer`
 
--   [이력서](https://onlyliving.github.io/resume/dist/)
+-   [이력서](https://onlyliving.github.io/resumeWithReact/)
 
 -   (Side Project) 카드형 컨텐츠 배경 이미지 검색 서비스
 
@@ -20,7 +20,7 @@
 
 ## TODO
 
-- 사이드 프로젝트 다시 시작하기
+-   사이드 프로젝트 다시 시작하기
     1. 기존 사이드 프로젝트 리펙토링 또는 다시 만들기
     2. 기능 단순한 서비스 만들기
         - 오픈 API 활용
